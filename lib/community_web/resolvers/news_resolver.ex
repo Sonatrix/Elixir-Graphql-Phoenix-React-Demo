@@ -1,7 +1,7 @@
 defmodule CommunityWeb.NewsResolver do
   alias Community.News
 
-  def all_links(_root, _args, _info) do
+  def all_links(_root, args, _info) do
     links = News.list_links()
     {:ok, links}
   end
@@ -14,6 +14,18 @@ defmodule CommunityWeb.NewsResolver do
 
       _error ->
         {:error, "could not create link"}
+    end
+  end
+
+  def find(_root, %{id: id}, _info) do
+    link = News.get_link!(id)
+
+    case link do
+      link ->
+        {:ok, link}
+
+      {:error, _} ->
+        {:error, "this id does not exists"}
     end
   end
 end
