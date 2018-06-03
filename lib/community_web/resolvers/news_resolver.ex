@@ -18,13 +18,11 @@ defmodule CommunityWeb.NewsResolver do
   end
 
   def find(_root, %{id: id}, _info) do
-    link = News.get_link!(id)
-
-    case link do
+    case News.get_link!(id) do
       link ->
         {:ok, link}
 
-      {:error, _} ->
+      nil ->
         {:error, "this id does not exists"}
     end
   end
