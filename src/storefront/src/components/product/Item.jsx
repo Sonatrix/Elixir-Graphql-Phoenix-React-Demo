@@ -1,4 +1,5 @@
 import {h, Component} from 'preact';
+import { Link } from 'preact-router/match';
 import Card from 'preact-material-components/Card';
 import 'preact-material-components/Card/style.css';
 import 'preact-material-components/Button/style.css';
@@ -6,6 +7,9 @@ import ImageList from 'preact-material-components/ImageList';
 import 'preact-material-components/ImageList/style.css';
 import LayoutGrid from 'preact-material-components/LayoutGrid';
 import 'preact-material-components/LayoutGrid/style.css';
+import Button from 'preact-material-components/Button';
+import 'preact-material-components/Button/style.css';
+import 'preact-material-components/Theme/style.css';
 
 export default class Item extends Component {
   render(){
@@ -24,7 +28,7 @@ export default class Item extends Component {
             <div class=" mdc-typography--caption">{this.props.description.substring(0,50)}</div>
           </div>
           <Card.Actions>
-            <Card.ActionButton>Buy Now</Card.ActionButton>
+          <Link activeClassName="active" href={`/product/${this.props.id}`}>Buy Now</Link>
           </Card.Actions>
         </Card>
       </LayoutGrid.Cell>

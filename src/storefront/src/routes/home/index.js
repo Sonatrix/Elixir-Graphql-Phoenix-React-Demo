@@ -15,6 +15,7 @@ const mapStateToProps = state => ({
 
 class Home extends Component {
 	componentDidMount() {
+	   console.log(this.props);
 	   this.props.dispatch(loadProducts());
 	}
 	render() {
@@ -39,7 +40,7 @@ class Home extends Component {
 	    	{products.map(
           (product) =>
             product && product.description && (
-              <Item key={product._id} image={product.external_images[0]} name={product.name} price={product.price} description={product.description}/>
+              <Item key={product._id} id={product._id} image={product.external_images[0]} name={product.name} price={product.price} description={product.description}/>
             )
         )}
         </LayoutGrid.Inner>

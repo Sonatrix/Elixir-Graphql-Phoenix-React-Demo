@@ -15,7 +15,7 @@ export default (state = initialState, action) => {
     case 'VIEW_PRODUCT':
       return {
         ...state,
-        product: action.product,
+        products: action.product,
       };
     default:
       return state;
