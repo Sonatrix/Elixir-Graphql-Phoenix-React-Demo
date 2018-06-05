@@ -62,9 +62,6 @@ export default class Header extends Component {
 							</Toolbar.Icon>
 							<Toolbar.Title>Shoppstar</Toolbar.Title>
 						</Toolbar.Section>
-						<Toolbar.Section align-end onClick={this.openSettings}>
-							<Toolbar.Icon>settings</Toolbar.Icon>
-						</Toolbar.Section>
 					</Toolbar.Row>
 				</Toolbar>
 				<Drawer.TemporaryDrawer ref={this.drawerRef}>
@@ -79,17 +76,6 @@ export default class Header extends Component {
 						</Drawer.DrawerItem>
 					</Drawer.DrawerContent>
 				</Drawer.TemporaryDrawer>
-				<Dialog ref={this.dialogRef}>
-					<Dialog.Header>Settings</Dialog.Header>
-					<Dialog.Body>
-						<div>
-							Enable dark theme <Switch onClick={this.toggleDarkTheme} />
-						</div>
-					</Dialog.Body>
-					<Dialog.Footer>
-						<Dialog.FooterButton accept>okay</Dialog.FooterButton>
-					</Dialog.Footer>
-				</Dialog>
 			</div>
 		);
 	}
